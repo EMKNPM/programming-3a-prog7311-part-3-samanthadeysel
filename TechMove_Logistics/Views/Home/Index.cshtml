@@ -1,0 +1,50 @@
+﻿<div class="container mt-4">
+    <h1 class="text-center mb-4">TechMove Logistics System</h1>
+    <div class="row g-4">
+
+        <!-- Clients -->
+        <div class="col-md-3">
+            <div class="card shadow-sm text-center h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Clients</h5>
+                    <p class="card-text">Manage client details and linked contracts.</p>
+                    <a asp-controller="Clients" asp-action="Index" class="btn btn-success w-100">View</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contracts -->
+        <div class="col-md-3">
+            <div class="card shadow-sm text-center h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Contracts</h5>
+                    <p class="card-text">Track contracts, agreements, and statuses.</p>
+                    <a asp-controller="Contracts" asp-action="Index" class="btn btn-info w-100">View</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service Requests -->
+        <div class="col-md-3">
+            <div class="card shadow-sm text-center h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Service Requests</h5>
+                    <p class="card-text">Create and monitor logistics service requests.</p>
+                    <a asp-controller="ServiceRequests" asp-action="Index" class="btn btn-secondary w-100">View</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Payments -->
+        <div class="col-md-3">
+            <div class="card shadow-sm text-center h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Payments</h5>
+                    <p class="card-text">Review and manage contract payments.</p>
+                    <a asp-controller="Payments" asp-action="Index" class="btn btn-danger w-100">View</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

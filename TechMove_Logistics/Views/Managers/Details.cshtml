@@ -1,0 +1,29 @@
+﻿@model TechMove_Logistics.ViewModels.ManagerViewModel
+
+@{
+    ViewData["Title"] = "Manager Details";
+}
+
+<h1>Manager Details</h1>
+
+<div>
+    <h4>Manager</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Manager ID</dt>
+        <dd class="col-sm-10">@Model.ManagerId</dd>
+
+        <dt class="col-sm-2">Service Request</dt>
+        <dd class="col-sm-10">@Model.ServiceRequestId</dd>
+
+        <dt class="col-sm-2">Status</dt>
+        <dd class="col-sm-10">@Model.ServiceRequestStatus</dd>
+
+        <dt class="col-sm-2">Summary</dt>
+        <dd class="col-sm-10">@Model.Summary</dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.ManagerId" class="btn btn-primary">Edit</a> |
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>

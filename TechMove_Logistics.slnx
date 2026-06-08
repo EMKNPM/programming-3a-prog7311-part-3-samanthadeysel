@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="docker-compose.dcproj">
+    <Build />
+  </Project>
+  <Project Path="Logistics_Test/Logistics_Test.csproj" Id="98bab320-fdeb-4d41-a360-8c15f3cdb275" />
+  <Project Path="TechMoves_WebAPI/TechMoves_WebAPI.csproj" Id="d7ece982-93d3-4a06-802b-96985cc7164a" />
+  <Project Path="TechMove_Logistics/TechMove_Logistics.csproj" />
+</Solution>

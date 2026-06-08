@@ -1,0 +1,179 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.TargetFrameworkIdentifier = .NETCoreApp
+build_property.TargetFrameworkVersion = v8.0
+build_property.RootNamespace = TechMove_Logistics
+build_property.RootNamespace = TechMove_Logistics
+build_property.ProjectDir = C:\Users\saman\Desktop\part-2-the-core-prototype-unit-testing-samanthadeysel\Tech_moves_part2\TechMove_Logistics\TechMove_Logistics\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\saman\Desktop\part-2-the-core-prototype-unit-testing-samanthadeysel\Tech_moves_part2\TechMove_Logistics\TechMove_Logistics
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/saman/Desktop/part-2-the-core-prototype-unit-testing-samanthadeysel/Tech_moves_part2/TechMove_Logistics/TechMove_Logistics/Views/Clients/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50c1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saman/Desktop/part-2-the-core-prototype-unit-testing-samanthadeysel/Tech_moves_part2/TechMove_Logistics/TechMove_Logistics/Views/Clients/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50c1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saman/Desktop/part-2-the-core-prototype-unit-testing-samanthadeysel/Tech_moves_part2/TechMove_Logistics/TechMove_Logistics/Views/Clients/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50c1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saman/Desktop/part-2-the-core-prototype-unit-testing-samanthadeysel/Tech_moves_part2/TechMove_Logistics/TechMove_Logistics/Views/Clients/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50c1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saman/Desktop/part-2-the-core-prototype-unit-testing-samanthadeysel/Tech_moves_part2/TechMove_Logistics/TechMove_Logistics/Views/Clients/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50c1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saman/Desktop/part-2-the-core-prototype-unit-testing-samanthadeysel/Tech_moves_part2/TechMove_Logistics/TechMove_Logistics/Views/Contracts/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udHJhY3RzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saman/Desktop/part-2-the-core-prototype-unit-testing-samanthadeysel/Tech_moves_part2/TechMove_Logistics/TechMove_Logistics/Views/Contracts/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udHJhY3RzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saman/Desktop/part-2-the-core-prototype-unit-testing-samanthadeysel/Tech_moves_part2/TechMove_Logistics/TechMove_Logistics/Views/Contracts/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udHJhY3RzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saman/Desktop/part-2-the-core-prototype-unit-testing-samanthadeysel/Tech_moves_part2/TechMove_Logistics/TechMove_Logistics/Views/Contracts/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udHJhY3RzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saman/Desktop/part-2-the-core-prototype-unit-testing-samanthadeysel/Tech_moves_part2/TechMove_Logistics/TechMove_Logistics/Views/Contracts/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udHJhY3RzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saman/Desktop/part-2-the-core-prototype-unit-testing-samanthadeysel/Tech_moves_part2/TechMove_Logistics/TechMove_Logistics/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saman/Desktop/part-2-the-core-prototype-unit-testing-samanthadeysel/Tech_moves_part2/TechMove_Logistics/TechMove_Logistics/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saman/Desktop/part-2-the-core-prototype-unit-testing-samanthadeysel/Tech_moves_part2/TechMove_Logistics/TechMove_Logistics/Views/Managers/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlcnNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saman/Desktop/part-2-the-core-prototype-unit-testing-samanthadeysel/Tech_moves_part2/TechMove_Logistics/TechMove_Logistics/Views/Managers/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlcnNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saman/Desktop/part-2-the-core-prototype-unit-testing-samanthadeysel/Tech_moves_part2/TechMove_Logistics/TechMove_Logistics/Views/Managers/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlcnNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saman/Desktop/part-2-the-core-prototype-unit-testing-samanthadeysel/Tech_moves_part2/TechMove_Logistics/TechMove_Logistics/Views/Managers/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlcnNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saman/Desktop/part-2-the-core-prototype-unit-testing-samanthadeysel/Tech_moves_part2/TechMove_Logistics/TechMove_Logistics/Views/Managers/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlcnNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saman/Desktop/part-2-the-core-prototype-unit-testing-samanthadeysel/Tech_moves_part2/TechMove_Logistics/TechMove_Logistics/Views/Payments/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5bWVudHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saman/Desktop/part-2-the-core-prototype-unit-testing-samanthadeysel/Tech_moves_part2/TechMove_Logistics/TechMove_Logistics/Views/Payments/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5bWVudHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saman/Desktop/part-2-the-core-prototype-unit-testing-samanthadeysel/Tech_moves_part2/TechMove_Logistics/TechMove_Logistics/Views/Payments/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5bWVudHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saman/Desktop/part-2-the-core-prototype-unit-testing-samanthadeysel/Tech_moves_part2/TechMove_Logistics/TechMove_Logistics/Views/Payments/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5bWVudHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saman/Desktop/part-2-the-core-prototype-unit-testing-samanthadeysel/Tech_moves_part2/TechMove_Logistics/TechMove_Logistics/Views/Payments/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5bWVudHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saman/Desktop/part-2-the-core-prototype-unit-testing-samanthadeysel/Tech_moves_part2/TechMove_Logistics/TechMove_Logistics/Views/ServiceRequests/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVJlcXVlc3RzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saman/Desktop/part-2-the-core-prototype-unit-testing-samanthadeysel/Tech_moves_part2/TechMove_Logistics/TechMove_Logistics/Views/ServiceRequests/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVJlcXVlc3RzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saman/Desktop/part-2-the-core-prototype-unit-testing-samanthadeysel/Tech_moves_part2/TechMove_Logistics/TechMove_Logistics/Views/ServiceRequests/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVJlcXVlc3RzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saman/Desktop/part-2-the-core-prototype-unit-testing-samanthadeysel/Tech_moves_part2/TechMove_Logistics/TechMove_Logistics/Views/ServiceRequests/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVJlcXVlc3RzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saman/Desktop/part-2-the-core-prototype-unit-testing-samanthadeysel/Tech_moves_part2/TechMove_Logistics/TechMove_Logistics/Views/ServiceRequests/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVJlcXVlc3RzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saman/Desktop/part-2-the-core-prototype-unit-testing-samanthadeysel/Tech_moves_part2/TechMove_Logistics/TechMove_Logistics/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saman/Desktop/part-2-the-core-prototype-unit-testing-samanthadeysel/Tech_moves_part2/TechMove_Logistics/TechMove_Logistics/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saman/Desktop/part-2-the-core-prototype-unit-testing-samanthadeysel/Tech_moves_part2/TechMove_Logistics/TechMove_Logistics/Views/Users/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saman/Desktop/part-2-the-core-prototype-unit-testing-samanthadeysel/Tech_moves_part2/TechMove_Logistics/TechMove_Logistics/Views/Users/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saman/Desktop/part-2-the-core-prototype-unit-testing-samanthadeysel/Tech_moves_part2/TechMove_Logistics/TechMove_Logistics/Views/Users/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saman/Desktop/part-2-the-core-prototype-unit-testing-samanthadeysel/Tech_moves_part2/TechMove_Logistics/TechMove_Logistics/Views/Users/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saman/Desktop/part-2-the-core-prototype-unit-testing-samanthadeysel/Tech_moves_part2/TechMove_Logistics/TechMove_Logistics/Views/Users/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saman/Desktop/part-2-the-core-prototype-unit-testing-samanthadeysel/Tech_moves_part2/TechMove_Logistics/TechMove_Logistics/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saman/Desktop/part-2-the-core-prototype-unit-testing-samanthadeysel/Tech_moves_part2/TechMove_Logistics/TechMove_Logistics/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/saman/Desktop/part-2-the-core-prototype-unit-testing-samanthadeysel/Tech_moves_part2/TechMove_Logistics/TechMove_Logistics/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-8ygt4uo7mp

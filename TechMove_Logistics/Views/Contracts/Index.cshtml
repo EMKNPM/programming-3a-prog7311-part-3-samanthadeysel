@@ -1,0 +1,48 @@
+﻿@model IEnumerable<TechMove_Logistics.ViewModels.ContractViewModel>
+
+@{
+    ViewData["Title"] = "Contracts";
+}
+
+<h1>Contracts</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Create New</a>
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Client</th>
+            <th>Contract Name</th>
+            <th>Type</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Duration</th>
+            <th>Status</th>
+            <th>Service Level</th>
+            <th>Agreement</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="@(item.IsExpired ? "table-danger" : item.IsActive ? "table-success" : "table-warning")">
+                <td>@item.ClientName</td>
+                <td>@item.ContractName</td>
+                <td>@item.ContractType</td>
+                <td>@item.StartDate.ToString("dd MMM yyyy")</td>
+                <td>@item.EndDate.ToString("dd MMM yyyy")</td>
+                <td>@item.Duration</td>
+                <td>@item.Status</td>
+                <td>@item.ServiceLevel</td>
+                <td>@item.SignedAgreementPath</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ContractId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ContractId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ContractId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

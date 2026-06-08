@@ -1,0 +1,40 @@
+﻿@model IEnumerable<TechMove_Logistics.ViewModels.PaymentViewModel>
+
+@{
+    ViewData["Title"] = "Payments";
+}
+
+<h1>Payments</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Create New</a>
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Contract</th>
+            <th>Amount (USD)</th>
+            <th>Amount (ZAR)</th>
+            <th>Date</th>
+            <th>Summary</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ContractName</td>
+                <td>@item.FormattedUSD</td>
+                <td>@item.FormattedZAR</td>
+                <td>@item.PaymentDateFormatted</td>
+                <td>@item.Summary</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.PaymentId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.PaymentId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.PaymentId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

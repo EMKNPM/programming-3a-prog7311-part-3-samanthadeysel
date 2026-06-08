@@ -1,0 +1,42 @@
+﻿@model IEnumerable<TechMove_Logistics.ViewModels.ServiceRequestViewModel>
+
+@{
+    ViewData["Title"] = "Service Requests";
+}
+
+<h1>Service Requests</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Create New</a>
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Contract</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Date</th>
+            <th>Cost (USD)</th>
+            <th>Summary</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="@(item.IsCompleted ? "table-success" : item.IsPending ? "table-warning" : "table-secondary")">
+                <td>@item.ContractName</td>
+                <td>@item.Description</td>
+                <td>@item.Status</td>
+                <td>@item.RequestDateFormatted</td>
+                <td>@item.FormattedCostUSD</td>
+                <td>@item.Summary</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ServiceRequestId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ServiceRequestId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ServiceRequestId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,44 @@
+name: dockercompose12855201875780891887
+services:
+  techmove_logistics:
+    build:
+      context: C:\Users\saman\Desktop\part-2-the-core-prototype-unit-testing-samanthadeysel\Tech_moves_part2\TechMove_Logistics
+      dockerfile: TechMove_Logistics\Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: "8080"
+      ASPNETCORE_HTTPS_PORTS: "8081"
+    image: techmovelogistics
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 8080
+        protocol: tcp
+      - mode: ingress
+        target: 8081
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\saman\AppData\Roaming/Microsoft/UserSecrets
+        target: C:\Users\ContainerUser\AppData\Roaming\Microsoft\UserSecrets
+        read_only: true
+        bind: {}
+      - type: bind
+        source: C:\Users\saman\AppData\Roaming/Microsoft/UserSecrets
+        target: C:\Users\ContainerAdministrator\AppData\Roaming\Microsoft\UserSecrets
+        read_only: true
+        bind: {}
+      - type: bind
+        source: C:\Users\saman\AppData\Roaming/ASP.NET/Https
+        target: C:\Users\ContainerUser\AppData\Roaming\ASP.NET\Https
+        read_only: true
+        bind: {}
+      - type: bind
+        source: C:\Users\saman\AppData\Roaming/ASP.NET/Https
+        target: C:\Users\ContainerAdministrator\AppData\Roaming\ASP.NET\Https
+        read_only: true
+        bind: {}
+networks:
+  default:
+    name: dockercompose12855201875780891887_default

@@ -1,0 +1,9 @@
+C:\Users\saman\Desktop\part-2-the-core-prototype-unit-testing-samanthadeysel\Tech_moves_part2\TechMove_Logistics\TechMoves_WebAPI\obj\Debug\net10.0\TechMoves_WebAPI.csproj.AssemblyReference.cache
+C:\Users\saman\Desktop\part-2-the-core-prototype-unit-testing-samanthadeysel\Tech_moves_part2\TechMove_Logistics\TechMoves_WebAPI\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Users\saman\Desktop\part-2-the-core-prototype-unit-testing-samanthadeysel\Tech_moves_part2\TechMove_Logistics\TechMoves_WebAPI\obj\Debug\net10.0\TechMoves_WebAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\saman\Desktop\part-2-the-core-prototype-unit-testing-samanthadeysel\Tech_moves_part2\TechMove_Logistics\TechMoves_WebAPI\obj\Debug\net10.0\TechMoves_WebAPI.AssemblyInfoInputs.cache
+C:\Users\saman\Desktop\part-2-the-core-prototype-unit-testing-samanthadeysel\Tech_moves_part2\TechMove_Logistics\TechMoves_WebAPI\obj\Debug\net10.0\TechMoves_WebAPI.AssemblyInfo.cs
+C:\Users\saman\Desktop\part-2-the-core-prototype-unit-testing-samanthadeysel\Tech_moves_part2\TechMove_Logistics\TechMoves_WebAPI\obj\Debug\net10.0\TechMoves_WebAPI.csproj.CoreCompileInputs.cache
+C:\Users\saman\Desktop\part-2-the-core-prototype-unit-testing-samanthadeysel\Tech_moves_part2\TechMove_Logistics\TechMoves_WebAPI\obj\Debug\net10.0\TechMoves_WebAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\saman\Desktop\part-2-the-core-prototype-unit-testing-samanthadeysel\Tech_moves_part2\TechMove_Logistics\TechMoves_WebAPI\obj\Debug\net10.0\TechMoves_WebAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\saman\Desktop\part-2-the-core-prototype-unit-testing-samanthadeysel\Tech_moves_part2\TechMove_Logistics\TechMoves_WebAPI\obj\Debug\net10.0\TechMoves_WebAPI.sourcelink.json

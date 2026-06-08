@@ -1,0 +1,47 @@
+﻿@model TechMove_Logistics.ViewModels.ContractViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Contract Details</h1>
+
+<div>
+    <h4>Contract</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Client</dt>
+        <dd class="col-sm-10">@Model.ClientName</dd>
+
+        <dt class="col-sm-2">Contract Name</dt>
+        <dd class="col-sm-10">@Model.ContractName</dd>
+
+        <dt class="col-sm-2">Description</dt>
+        <dd class="col-sm-10">@Model.ContractDescription</dd>
+
+        <dt class="col-sm-2">Type</dt>
+        <dd class="col-sm-10">@Model.ContractType</dd>
+
+        <dt class="col-sm-2">Start Date</dt>
+        <dd class="col-sm-10">@Model.StartDate.ToString("dd MMM yyyy")</dd>
+
+        <dt class="col-sm-2">End Date</dt>
+        <dd class="col-sm-10">@Model.EndDate.ToString("dd MMM yyyy")</dd>
+
+        <dt class="col-sm-2">Duration</dt>
+        <dd class="col-sm-10">@Model.Duration</dd>
+
+        <dt class="col-sm-2">Status</dt>
+        <dd class="col-sm-10">@Model.Status</dd>
+
+        <dt class="col-sm-2">Service Level</dt>
+        <dd class="col-sm-10">@Model.ServiceLevel</dd>
+
+        <dt class="col-sm-2">Agreement</dt>
+        <dd class="col-sm-10">@Model.SignedAgreementPath</dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.ContractId" class="btn btn-primary">Edit</a> |
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>

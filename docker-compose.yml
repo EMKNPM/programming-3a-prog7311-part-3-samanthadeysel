@@ -1,0 +1,6 @@
+services:
+  techmove_logistics:
+    image: ${DOCKER_REGISTRY-}techmovelogistics
+    build:
+      context: .
+      dockerfile: TechMove_Logistics\Dockerfile

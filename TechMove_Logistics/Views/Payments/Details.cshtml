@@ -1,0 +1,32 @@
+﻿@model TechMove_Logistics.ViewModels.PaymentViewModel
+
+@{
+    ViewData["Title"] = "Payment Details";
+}
+
+<h1>Payment Details</h1>
+
+<div>
+    <h4>Payment</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Contract</dt>
+        <dd class="col-sm-10">@Model.ContractName</dd>
+
+        <dt class="col-sm-2">Amount (USD)</dt>
+        <dd class="col-sm-10">@Model.FormattedUSD</dd>
+
+        <dt class="col-sm-2">Amount (ZAR)</dt>
+        <dd class="col-sm-10">@Model.FormattedZAR</dd>
+
+        <dt class="col-sm-2">Date</dt>
+        <dd class="col-sm-10">@Model.PaymentDateFormatted</dd>
+
+        <dt class="col-sm-2">Summary</dt>
+        <dd class="col-sm-10">@Model.Summary</dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.PaymentId" class="btn btn-primary">Edit</a> |
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>
