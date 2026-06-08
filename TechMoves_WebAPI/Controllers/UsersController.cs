@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity.Data;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TechMoves_WebAPI.Data;
 using TechMoves_WebAPI.Models;
@@ -64,5 +65,56 @@ namespace TechMoves_WebAPI.Controllers
             await _context.SaveChangesAsync();
             return NoContent();
         }
+
+        [HttpPost("login")]
+        public async Task<IActionResult> Login([FromBody] LoginRequest request)
+        {
+            // Search the database for a user matching the provided email and password
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.EmailAddress == request.Email && u.PasswordHash == request.Password);
+
+            if (user == null)
+            {
+                return Unauthorized("Invalid email address or password.");
+            }
+
+            // Return user details upon a successful match
+            return Ok(new { user.UserId, user.FirstName, user.LastName, user.EmailAddress });
+        }
+
+        [HttpPost("register")]
+        public async Task<IActionResult> Register([FromBody] RegisterRequest request)
+        {
+            var existingUser = await _context.Users.AnyAsync(u => u.EmailAddress == request.EmailAddress);
+            if (existingUser)
+            {
+                return BadRequest("An account with this email address already exists.");
+            }
+
+            var newUser = new User
+            {
+                FirstName = request.FirstName,
+                LastName = request.LastName,
+                EmailAddress = request.EmailAddress,
+                PasswordHash = request.Password
+            };
+
+            _context.Users.Add(newUser);
+            await _context.SaveChangesAsync();
+
+            return Ok("User registered successfully.");
+        }
+    }
+    public class LoginRequest
+    {
+        public string Email { get; set; } = string.Empty;
+        public string Password { get; set; } = string.Empty;
+    }
+
+    public class RegisterRequest
+    {
+        public string FirstName { get; set; } = string.Empty;
+        public string LastName { get; set; } = string.Empty;
+        public string EmailAddress { get; set; } = string.Empty;
+        public string Password { get; set; } = string.Empty;
     }
 }

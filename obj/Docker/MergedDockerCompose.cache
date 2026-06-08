@@ -1,14 +1,14 @@
-name: dockercompose12855201875780891887
+name: dockercompose18179218994089455273
 services:
-  techmove_logistics:
+  techmoves_webapi:
     build:
-      context: C:\Users\saman\Desktop\part-2-the-core-prototype-unit-testing-samanthadeysel\Tech_moves_part2\TechMove_Logistics
-      dockerfile: TechMove_Logistics\Dockerfile
+      context: C:\Users\saman\Desktop\programming-3a-prog7311-part-3-samanthadeysel
+      dockerfile: TechMoves_WebAPI/Dockerfile
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_HTTP_PORTS: "8080"
       ASPNETCORE_HTTPS_PORTS: "8081"
-    image: techmovelogistics
+    image: techmoveswebapi
     networks:
       default: null
     ports:
@@ -20,25 +20,25 @@ services:
         protocol: tcp
     volumes:
       - type: bind
-        source: C:\Users\saman\AppData\Roaming/Microsoft/UserSecrets
-        target: C:\Users\ContainerUser\AppData\Roaming\Microsoft\UserSecrets
+        source: /c/Users/saman/AppData/Roaming/Microsoft/UserSecrets
+        target: /home/app/.microsoft/usersecrets
         read_only: true
         bind: {}
       - type: bind
-        source: C:\Users\saman\AppData\Roaming/Microsoft/UserSecrets
-        target: C:\Users\ContainerAdministrator\AppData\Roaming\Microsoft\UserSecrets
+        source: /c/Users/saman/AppData/Roaming/Microsoft/UserSecrets
+        target: /root/.microsoft/usersecrets
         read_only: true
         bind: {}
       - type: bind
-        source: C:\Users\saman\AppData\Roaming/ASP.NET/Https
-        target: C:\Users\ContainerUser\AppData\Roaming\ASP.NET\Https
+        source: /c/Users/saman/AppData/Roaming/ASP.NET/Https
+        target: /home/app/.aspnet/https
         read_only: true
         bind: {}
       - type: bind
-        source: C:\Users\saman\AppData\Roaming/ASP.NET/Https
-        target: C:\Users\ContainerAdministrator\AppData\Roaming\ASP.NET\Https
+        source: /c/Users/saman/AppData/Roaming/ASP.NET/Https
+        target: /root/.aspnet/https
         read_only: true
         bind: {}
 networks:
   default:
-    name: dockercompose12855201875780891887_default
+    name: dockercompose18179218994089455273_default

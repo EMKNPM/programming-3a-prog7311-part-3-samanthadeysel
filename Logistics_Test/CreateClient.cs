@@ -1,35 +1,57 @@
+using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
-using TechMove_Logistics.Data;
-using TechMove_Logistics.Models;
+using TechMoves_WebAPI.Data;
+using TechMoves_WebAPI.Models;
+using Xunit;
 
-namespace Logistics_Test;
-
-public class CreateClient
+namespace Logistics_Test
 {
-    private TechMove_LogisticsContext GetContext()
+    public class CreateClient
     {
-        var options = new DbContextOptionsBuilder<TechMove_LogisticsContext>()
-            .UseInMemoryDatabase(Guid.NewGuid().ToString())
-            .Options;
-        return new TechMove_LogisticsContext(options);
-    }
-
-    [Fact]
-    public async Task CreateClient_SavesSuccessfully()
-    {
-        using var context = GetContext();
-        var client = new Client
+        private TechMoves_WebAPIContext GetContext()
         {
-            ClientId = 1,
-            Name = "Test Client",
-            ContactNumber = "0645005000",
-            Region = "KwaZulu-Natal"
-        };
+            var options = new DbContextOptionsBuilder<TechMoves_WebAPIContext>()
+                .UseInMemoryDatabase(Guid.NewGuid().ToString())
+                .Options;
+            return new TechMoves_WebAPIContext(options);
+        }
 
-        context.Clients.Add(client);
-        await context.SaveChangesAsync();
+        [Fact]
+        public async Task CreateClient_SavesSuccessfully()
+        {
+            using var context = GetContext();
+            var client = new Client
+            {
+                Name = "Test Client",
+                ContactNumber = "0645005000",
+                Region = "KwaZulu-Natal"
+            };
 
-        var saved = await context.Clients.FirstAsync();
-        Assert.Equal("Test Client", saved.Name);
+            context.Clients.Add(client);
+            await context.SaveChangesAsync();
+
+            var saved = await context.Clients.FirstAsync();
+            Assert.Equal("Test Client", saved.Name);
+            Assert.Equal("0645005000", saved.ContactNumber);
+            Assert.Equal("KwaZulu-Natal", saved.Region);
+        }
+
+        [Fact]
+        public void CreateClient_FailsWithoutName()
+        {
+            using var context = GetContext();
+            var client = new Client
+            {
+                ContactNumber = "0645005000",
+                Region = "KwaZulu-Natal"
+            };
+
+            var validationContext = new ValidationContext(client, null, null);
+            var validationResults = new List<ValidationResult>();
+            bool isValid = Validator.TryValidateObject(client, validationContext, validationResults, true);
+
+            Assert.False(isValid);
+            Assert.Contains(validationResults, r => r.MemberNames.Contains("Name"));
+        }
     }
 }

@@ -1,30 +1,33 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using TechMoves_WebAPI.Utilities;
+using Xunit;
 
 namespace Logistics_Test
 {
-    public static class FileValidator
-    {
-        public static void Validate(string fileName)
-        {
-            if (!fileName.EndsWith(".pdf", StringComparison.OrdinalIgnoreCase))
-                throw new InvalidOperationException("Only PDF files are allowed.");
-        }
-    }
-
-    public static class FileValidatorTest
+    public class FileValidatorTests
     {
         [Fact]
-        public static void ValidatePdfFileDoesNotThrow()
+        public void Validate_PdfFile_DoesNotThrow()
         {
             FileValidator.Validate("agreement.pdf");
         }
 
         [Fact]
-        public static void ValidateExeFileThrowsError()
+        public void Validate_ExeFile_ThrowsError()
         {
             Assert.Throws<InvalidOperationException>(() => FileValidator.Validate("virus.exe"));
+        }
+
+        [Fact]
+        public void Validate_DocxFile_ThrowsError()
+        {
+            Assert.Throws<InvalidOperationException>(() => FileValidator.Validate("report.docx"));
+        }
+
+        [Fact]
+        public void Validate_PdfFileWithUppercaseExtension_DoesNotThrow()
+        {
+            FileValidator.Validate("contract.PDF");
         }
     }
 }

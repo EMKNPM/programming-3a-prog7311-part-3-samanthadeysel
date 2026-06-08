@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("e2fd231f-57a0-4386-b3f7-170fa4bfac16")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("TechMove_Logistics")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+596cf318abc551b4469e8b57bb432ca76d9d619b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+43175ec98372426410209683752e8fa1d1ddc5bd")]
 [assembly: System.Reflection.AssemblyProductAttribute("TechMove_Logistics")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TechMove_Logistics")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

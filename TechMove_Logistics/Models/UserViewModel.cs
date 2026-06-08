@@ -6,8 +6,8 @@
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string EmailAddress { get; set; }
+        public string Password { get; set; }
 
-        // Extra properties for the view only
         public string FullName => $"{FirstName} {LastName}";
     }
 }

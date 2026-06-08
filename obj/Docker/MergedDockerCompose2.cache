@@ -1,0 +1,97 @@
+name: dockercompose18179218994089455273
+services:
+  techmove-logistics:
+    build:
+      context: C:\Users\saman\Desktop\programming-3a-prog7311-part-3-samanthadeysel
+      dockerfile: TechMove_Logistics/Dockerfile
+    container_name: techmove_logistics_mvc_container
+    depends_on:
+      techmoves_webapi:
+        condition: service_started
+        required: true
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:5186;https://+:7169
+    image: techmovelogistics
+    networks:
+      techmoves_network: null
+    ports:
+      - mode: ingress
+        target: 7169
+        published: "7169"
+        protocol: tcp
+      - mode: ingress
+        target: 5186
+        published: "5186"
+        protocol: tcp
+  techmoves-db:
+    container_name: techmoves_sql_db
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: YourStrongSecurePass123!
+    image: ://microsoft.com
+    networks:
+      techmoves_network: null
+    ports:
+      - mode: ingress
+        target: 1433
+        published: "1433"
+        protocol: tcp
+  techmoves_webapi:
+    build:
+      context: C:\Users\saman\Desktop\programming-3a-prog7311-part-3-samanthadeysel
+      dockerfile: TechMoves_WebAPI/Dockerfile
+    container_name: techmoves_web_api_container
+    depends_on:
+      techmoves-db:
+        condition: service_started
+        required: true
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: "8080"
+      ASPNETCORE_HTTPS_PORTS: "8081"
+      ASPNETCORE_URLS: http://+:5297;https://+:7292
+      ConnectionStrings__DefaultConnection: Server=techmoves-db;Database=TechMoves_Logistics_DB;User Id=sa;Password=YourStrongSecurePass123!;TrustServerCertificate=True;
+    image: techmoveswebapi
+    networks:
+      techmoves_network: null
+    ports:
+      - mode: ingress
+        target: 7292
+        published: "7292"
+        protocol: tcp
+      - mode: ingress
+        target: 5297
+        published: "5297"
+        protocol: tcp
+      - mode: ingress
+        target: 8080
+        protocol: tcp
+      - mode: ingress
+        target: 8081
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /c/Users/saman/AppData/Roaming/Microsoft/UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind: {}
+      - type: bind
+        source: /c/Users/saman/AppData/Roaming/Microsoft/UserSecrets
+        target: /root/.microsoft/usersecrets
+        read_only: true
+        bind: {}
+      - type: bind
+        source: /c/Users/saman/AppData/Roaming/ASP.NET/Https
+        target: /home/app/.aspnet/https
+        read_only: true
+        bind: {}
+      - type: bind
+        source: /c/Users/saman/AppData/Roaming/ASP.NET/Https
+        target: /root/.aspnet/https
+        read_only: true
+        bind: {}
+networks:
+  techmoves_network:
+    name: dockercompose18179218994089455273_techmoves_network
+    driver: bridge

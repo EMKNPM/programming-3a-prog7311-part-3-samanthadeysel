@@ -1,4 +1,5 @@
-﻿using TechMoves_WebAPI.Services;
+﻿using Microsoft.AspNetCore.Authentication.Cookies;
+using TechMoves_WebAPI.Services;
 
 namespace TechMove_Logistics
 {
@@ -8,18 +9,34 @@ namespace TechMove_Logistics
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
             builder.Services.AddControllersWithViews();
 
-            // Register HttpClient for API calls
-            builder.Services.AddHttpClient();
+            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options =>
+                {
+                    options.LoginPath = "/Account/Login"; 
+                    options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
+                });
 
-            // Register CurrencyService if you still want to call it directly
-            builder.Services.AddHttpClient<CurrencyService>();
+            builder.Services.AddHttpClient("", client =>
+            {
+                client.BaseAddress = new Uri("https://techmoves_webapi:7292/");
+            }).ConfigurePrimaryHttpMessageHandler(() => new HttpClientHandler
+            {
+                ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
+            });
+
+            builder.Services.AddHttpClient<CurrencyService>(client =>
+            {
+                client.BaseAddress = new Uri("https://techmoves_webapi:7292/");
+            }).ConfigurePrimaryHttpMessageHandler(() => new HttpClientHandler
+            {
+                ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
+            });
+
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
@@ -27,16 +44,20 @@ namespace TechMove_Logistics
             }
 
             app.UseHttpsRedirection();
-            app.UseStaticFiles();   // ✅ Needed for serving CSS, JS, images
+
+            app.UseStaticFiles();
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
-            // Default MVC route
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Home}/{action=Index}/{id?}",
+                defaults: null,
+                constraints: null,
+                dataTokens: new { namespaces = new[] { "TechMove_Logistics.Controllers" } });
 
             app.Run();
         }

@@ -1,6 +1,52 @@
+version: '3.4'
+
 services:
-  techmove_logistics:
-    image: ${DOCKER_REGISTRY-}techmovelogistics
+  techmoves-db:
+    image: ://microsoft.com
+    container_name: techmoves_sql_db
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=YourStrongSecurePass123!
+    ports:
+      - "1433:1433"
+    networks:
+      - techmoves_network
+
+  techmoves-webapi:
+    image: techmoveswebapi
+    container_name: techmoves_web_api_container
     build:
       context: .
-      dockerfile: TechMove_Logistics\Dockerfile
+      dockerfile: TechMoves_WebAPI/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:5297;https://+:7292
+      - ConnectionStrings__DefaultConnection=Server=techmoves-db;Database=TechMoves_Logistics_DB;User Id=sa;Password=YourStrongSecurePass123!;TrustServerCertificate=True;
+    ports:
+      - "7292:7292"
+      - "5297:5297"
+    depends_on:
+      - techmoves-db
+    networks:
+      - techmoves_network
+
+  techmove-logistics:
+    image: techmovelogistics
+    container_name: techmove_logistics_mvc_container
+    build:
+      context: .
+      dockerfile: TechMove_Logistics/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:5186;https://+:7169
+    ports:
+      - "7169:7169"
+      - "5186:5186"
+    depends_on:
+      - techmoves-webapi
+    networks:
+      - techmoves_network
+
+networks:
+  techmoves_network:
+    driver: bridge

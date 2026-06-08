@@ -1,0 +1,31 @@
+﻿@model dynamic
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="row justify-content-center" style="margin-top: 100px;">
+    <div class="col-md-4">
+        <div class="card shadow-sm p-4">
+            <h2 class="text-center mb-4">TechMove Logistics Login</h2>
+            
+            <form asp-action="Login" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger small mb-3"></div>
+                
+                <div class="form-group mb-3">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" name="email" class="form-control" placeholder="Enter your email" required />
+                </div>
+                
+                <div class="form-group mb-4">
+                    <label class="form-label">Password</label>
+                    <input type="password" name="password" class="form-control" placeholder="Enter your password" required />
+                </div>
+                
+                <button type="submit" class="btn btn-primary w-100">Sign In</button>
+                <div class="text-center mt-3">
+                    <a asp-action="Register" class="small text-decoration-none">Don't have an account? Register here</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

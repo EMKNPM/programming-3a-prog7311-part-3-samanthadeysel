@@ -24,6 +24,7 @@ namespace TechMoves_WebAPI.Models
         [Required]
         [DataType(DataType.Currency)]
         public decimal CostUSD { get; set; }
+        public decimal CostZAR { get; set; }
     }
 
 }

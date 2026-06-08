@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using TechMove_Logistics.Models;
 using TechMoves_WebAPI.Models;
 
 namespace TechMoves_WebAPI.Data
@@ -26,10 +25,10 @@ namespace TechMoves_WebAPI.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Ignore<TechMove_Logistics.State.ContractState>();
-            modelBuilder.Ignore<TechMove_Logistics.State.DraftState>();
-            modelBuilder.Ignore<TechMove_Logistics.State.ActiveState>();
-            modelBuilder.Ignore<TechMove_Logistics.State.ExpiredState>();
+            modelBuilder.Ignore<TechMoves_WebAPI.State.ContractState>();
+            modelBuilder.Ignore<TechMoves_WebAPI.State.DraftState>();
+            modelBuilder.Ignore<TechMoves_WebAPI.State.ActiveState>();
+            modelBuilder.Ignore<TechMoves_WebAPI.State.ExpiredState>();
         }
     }
 }

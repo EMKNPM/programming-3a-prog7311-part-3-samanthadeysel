@@ -1,5 +1,6 @@
-
+using Microsoft.EntityFrameworkCore;
 using TechMoves_WebAPI.Data;
+using TechMoves_WebAPI.Services;
 
 namespace TechMoves_WebAPI
 {
@@ -9,28 +10,43 @@ namespace TechMoves_WebAPI
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            //dbcontext
-            builder.Services.AddDbContext<TechMoves_WebAPIContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
-
-            // Add services to the container.
-
             builder.Services.AddControllers();
-            // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-            builder.Services.AddOpenApi();
+
+            builder.Services.AddCors(options => {
+                options.AddPolicy("AllowFrontend", policy => {
+                    policy.WithOrigins(
+                              "http://localhost:5186",
+                              "https://localhost:7169",
+                              "http://techmove-logistics:5186",
+                              "https://techmove-logistics:7169"
+                          )
+                          .AllowAnyMethod()
+                          .AllowAnyHeader();
+                });
+            });
+
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddSwaggerGen();
+
+            builder.Services.AddDbContext<TechMoves_WebAPIContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+            builder.Services.AddHttpClient();
+            builder.Services.AddHttpClient<CurrencyService>();
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
-                app.MapOpenApi();
+                app.UseSwagger();
+                app.UseSwaggerUI();
             }
 
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
 
+            app.UseCors("AllowFrontend");
 
             app.MapControllers();
 

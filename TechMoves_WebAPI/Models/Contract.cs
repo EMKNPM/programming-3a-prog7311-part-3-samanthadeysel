@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema; // 🟢 Added for NotMapped attribute
 using TechMoves_WebAPI.Observer;
 using TechMoves_WebAPI.State;
 
@@ -6,8 +7,17 @@ namespace TechMoves_WebAPI.Models
 {
     public class Contract
     {
+        public Contract()
+        {
+            _observers = new List<IContractObserver>
+            {
+                new ComplianceModule(),
+                new ServiceRequestModule()
+            };
+        }
 
         public int ContractId { get; set; }
+
         [Required]
         public int ClientId { get; set; }
 
@@ -36,15 +46,23 @@ namespace TechMoves_WebAPI.Models
 
         public ICollection<ServiceRequest> ServiceRequests { get; set; } = new List<ServiceRequest>();
 
+        [NotMapped]
         public ContractState? State { get; private set; }
+
         public void SetState(ContractState state)
         {
+            if (!string.IsNullOrEmpty(this.SignedAgreementPath))
+            {
+                TechMoves_WebAPI.Utilities.FileValidator.Validate(this.SignedAgreementPath);
+            }
+
             State = state;
             state.HandleRequest(this);
             Notify();
         }
 
-        private readonly List<IContractObserver> _observers = new();
+        [NotMapped]
+        private readonly List<IContractObserver> _observers;
 
         public void Attach(IContractObserver observer) => _observers.Add(observer);
         public void Detach(IContractObserver observer) => _observers.Remove(observer);

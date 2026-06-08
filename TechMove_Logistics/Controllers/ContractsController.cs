@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System.Net.Http;
 using System.Net.Http.Json;
 using TechMove_Logistics.ViewModels;
 
 namespace TechMove_Logistics.Controllers
 {
+    [Authorize]
     public class ContractsController : Controller
     {
         private readonly HttpClient _httpClient;
@@ -17,9 +19,8 @@ namespace TechMove_Logistics.Controllers
         // GET: Contracts
         public async Task<IActionResult> Index(DateTime? startDate, DateTime? endDate, string status)
         {
-            var url = "https://localhost:5001/api/contracts";
+            var url = "api/contracts";
 
-            // Add query params for filtering
             var queryParams = new List<string>();
             if (startDate.HasValue) queryParams.Add($"startDate={startDate.Value:O}");
             if (endDate.HasValue) queryParams.Add($"endDate={endDate.Value:O}");
@@ -35,9 +36,16 @@ namespace TechMove_Logistics.Controllers
         // GET: Contracts/Details/5
         public async Task<IActionResult> Details(int id)
         {
-            var contract = await _httpClient.GetFromJsonAsync<ContractViewModel>($"https://localhost:5001/api/contracts/{id}");
+            var contract = await _httpClient.GetFromJsonAsync<ContractViewModel>($"api/contracts/{id}");
             if (contract == null) return NotFound();
             return View(contract);
+        }
+
+        // GET: Contracts/Create
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
         }
 
         // POST: Contracts/Create
@@ -46,7 +54,7 @@ namespace TechMove_Logistics.Controllers
         public async Task<IActionResult> Create(ContractViewModel contract)
         {
             contract.Status = "Draft";
-            var response = await _httpClient.PostAsJsonAsync("https://localhost:5001/api/contracts", contract);
+            var response = await _httpClient.PostAsJsonAsync("api/contracts", contract);
 
             if (response.IsSuccessStatusCode)
                 return RedirectToAction(nameof(Index));
@@ -60,7 +68,7 @@ namespace TechMove_Logistics.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, ContractViewModel contract)
         {
-            var response = await _httpClient.PutAsJsonAsync($"https://localhost:5001/api/contracts/{id}", contract);
+            var response = await _httpClient.PutAsJsonAsync($"api/contracts/{id}", contract);
 
             if (response.IsSuccessStatusCode)
                 return RedirectToAction(nameof(Index));
@@ -74,7 +82,7 @@ namespace TechMove_Logistics.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var response = await _httpClient.DeleteAsync($"https://localhost:5001/api/contracts/{id}");
+            var response = await _httpClient.DeleteAsync($"api/contracts/{id}");
             if (response.IsSuccessStatusCode)
                 return RedirectToAction(nameof(Index));
 

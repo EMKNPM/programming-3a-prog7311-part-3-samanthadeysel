@@ -17,14 +17,14 @@ namespace TechMove_Logistics.Controllers
         // GET: Payments
         public async Task<IActionResult> Index()
         {
-            var payments = await _httpClient.GetFromJsonAsync<List<PaymentViewModel>>("https://localhost:5001/api/payments");
+            var payments = await _httpClient.GetFromJsonAsync<List<PaymentViewModel>>("api/payments");
             return View(payments);
         }
 
         // GET: Payments/Details/5
         public async Task<IActionResult> Details(int id)
         {
-            var payment = await _httpClient.GetFromJsonAsync<PaymentViewModel>($"https://localhost:5001/api/payments/{id}");
+            var payment = await _httpClient.GetFromJsonAsync<PaymentViewModel>($"api/payments/{id}");
             if (payment == null) return NotFound();
             return View(payment);
         }
@@ -34,7 +34,7 @@ namespace TechMove_Logistics.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(PaymentViewModel payment)
         {
-            var response = await _httpClient.PostAsJsonAsync("https://localhost:5001/api/payments", payment);
+            var response = await _httpClient.PostAsJsonAsync("api/payments", payment);
             if (response.IsSuccessStatusCode)
                 return RedirectToAction(nameof(Index));
 
@@ -47,7 +47,7 @@ namespace TechMove_Logistics.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, PaymentViewModel payment)
         {
-            var response = await _httpClient.PutAsJsonAsync($"https://localhost:5001/api/payments/{id}", payment);
+            var response = await _httpClient.PutAsJsonAsync($"api/payments/{id}", payment);
             if (response.IsSuccessStatusCode)
                 return RedirectToAction(nameof(Index));
 
@@ -60,7 +60,7 @@ namespace TechMove_Logistics.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var response = await _httpClient.DeleteAsync($"https://localhost:5001/api/payments/{id}");
+            var response = await _httpClient.DeleteAsync($"api/payments/{id}");
             if (response.IsSuccessStatusCode)
                 return RedirectToAction(nameof(Index));
 

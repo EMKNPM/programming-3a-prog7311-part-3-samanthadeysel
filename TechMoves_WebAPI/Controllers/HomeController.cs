@@ -2,11 +2,14 @@
 
 namespace TechMoves_WebAPI.Controllers
 {
-    public class HomeController : Controller
+    [ApiController]
+    [Route("api/[controller]")] // Routes this endpoint to https://localhost:7292/api/home
+    public class HomeController : ControllerBase
     {
+        [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            return Ok("TechMoves Web API is running smoothly on local machine.");
         }
     }
 }
