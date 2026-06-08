@@ -89,3 +89,5 @@ C:\Users\saman\Desktop\programming-3a-prog7311-part-3-samanthadeysel\TechMoves_W
 C:\Users\saman\Desktop\programming-3a-prog7311-part-3-samanthadeysel\TechMoves_WebAPI\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\saman\Desktop\programming-3a-prog7311-part-3-samanthadeysel\TechMoves_WebAPI\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\saman\Desktop\programming-3a-prog7311-part-3-samanthadeysel\TechMoves_WebAPI\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\saman\Desktop\programming-3a-prog7311-part-3-samanthadeysel\TechMoves_WebAPI\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\saman\Desktop\programming-3a-prog7311-part-3-samanthadeysel\TechMoves_WebAPI\obj\Debug\net8.0\staticwebassets.build.json
